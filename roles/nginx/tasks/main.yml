@@ -1,0 +1,5 @@
+---
+- name: Ensure nginx is present
+  apt:
+    name: nginx
+    state: present

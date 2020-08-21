@@ -1,0 +1,11 @@
+- name: Ensure DB Postgresql is present
+  apt:
+    name: postgresql:11
+    state: present
+
+- name: create a DB user
+  postgresql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_pass }}"
+    become: True
+    become_user: postgres    
