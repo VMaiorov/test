@@ -1,0 +1,13 @@
+- name: Ensure gunicorn package is present
+  pip:
+    name: gunicorn
+    state: present
+
+- name: clone repository
+  git:
+    repo: 'https://github.com/mbaran0v/python-sample-app.git'
+    dest: /home/test_work
+
+- name: Start migrate database
+  shell: flask db upgrade
+
