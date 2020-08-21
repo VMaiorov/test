@@ -1,0 +1,14 @@
+---
+- name: Ensure Python 3.6 package is present
+  apt:
+    name: Python:3.6
+    state: present
+
+- name: Ensure pip package is present
+  apt:
+    name: python-pip
+    state: present
+
+- name: Ensure libs is present
+  pip:
+    requirements: /requirements.txt
