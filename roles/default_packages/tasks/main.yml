@@ -1,19 +1,38 @@
 ---
+- name: Ensure group "newgroup" is present
+  group:
+    name: newgroup
+    state: present
+
+  - name: Ensure user "no_standart_user" is present
+  user:
+    name: no_standart_user
+    shell: /bin/bash
+    groups: newgroup
+    append: yes    
+
 - name: Ensure Python 3.6 package is present
   apt:
-    name: Python:3.6
+    name: "{{ item }}"
     state: present
+  with_items:
+    - python3.6
+    - git
+    - nginx
+    - python3-pip
+    - libpq-dev
 
-- name: Ensure git is present
-  apt:
-    name: git
-    state: present
+- name: Ensure gunicorn package is present
+  pip:
+    name: gunicorn
+    executable: pip3
 
-- name: Ensure pip package is present
-  apt:
-    name: python-pip
-    state: present
+- name: clone repository
+  git:
+    repo: 'https://github.com/mbaran0v/python-sample-app.git'
+    dest: /home/test_work
 
 - name: Ensure libs is present
   pip:
     requirements: /home/test_work/requirements.txt
+    executable: pip3

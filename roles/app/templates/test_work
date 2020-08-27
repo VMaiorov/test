@@ -1,0 +1,10 @@
+[Unit]
+Description=test_work
+
+[Service]
+User=no_standart_user
+WorkingDirectory=/home/test_work
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 app:api
+
+[Install]
+WantedBy=multi-user.target

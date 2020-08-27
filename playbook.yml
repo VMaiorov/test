@@ -1,3 +1,24 @@
 ---
-- name:
+- name: Ensure postgresql is present
+  hosts: all
+  become: yes
+
+  roles:
+    - ANXS.postgresql
+    
+  vars_files:
+    - ./inventories/host_vars/test.yml
+
+- name: Server configuration and start app
+  hosts: all
+  become: yes
+
+  environment:
+    FLASK_APP: app.py
+    POSTGRESQL_URL: "postgresql://worker:worker@127.0.0.1/app"
+  
+  roles:
+    - default_packages
+    - nginx
+    - app      
   
