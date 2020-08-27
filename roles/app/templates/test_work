@@ -4,6 +4,8 @@ Description=test_work
 [Service]
 User=no_standart_user
 WorkingDirectory=/home/test_work
+Environment=POSTGRESQL_URL=postgresql://dbuser:fgL9g5Dm@127.0.0.1/app
+Environment=FLASK_APP=app.py
 ExecStart=/usr/local/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 app:api
 
 [Install]

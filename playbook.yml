@@ -15,7 +15,7 @@
 
   environment:
     FLASK_APP: app.py
-    POSTGRESQL_URL: "postgresql://worker:worker@127.0.0.1/app"
+    POSTGRESQL_URL: "postgresql://dbuser:fgL9g5Dm@127.0.0.1/app"
   
   roles:
     - default_packages
