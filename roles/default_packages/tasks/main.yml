@@ -4,7 +4,7 @@
     name: newgroup
     state: present
 
-  - name: Ensure user "no_standart_user" is present
+- name: Ensure user "no_standart_user" is present
   user:
     name: no_standart_user
     shell: /bin/bash
