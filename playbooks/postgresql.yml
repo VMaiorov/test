@@ -7,4 +7,4 @@
     - ANXS.postgresql
     
   vars_files:
-    - ./environments/environment_dir/host_vars/test.yml
+    - ../environments/environment_dir/host_vars/test.yml
