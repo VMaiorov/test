@@ -1,14 +1,4 @@
 ---
-- name: Ensure postgresql is present
-  hosts: all
-  become: yes
-
-  roles:
-    - ANXS.postgresql
-    
-  vars_files:
-    - ./inventories/host_vars/test.yml
-
 - name: Server configuration and start app
   hosts: all
   become: yes
@@ -20,5 +10,4 @@
   roles:
     - default_packages
     - nginx
-    - app      
-  
+    - app   

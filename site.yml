@@ -1,0 +1,3 @@
+---
+- import_playbook: playbooks/postgresql.yml
+- import_playbook: playbooks/application.yml
