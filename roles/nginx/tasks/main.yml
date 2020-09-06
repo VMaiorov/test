@@ -4,7 +4,7 @@
     src: ../roles/nginx/files/nginx.conf
     dest: /etc/nginx/nginx.conf
     
-- name: Ensure servise nginx is started
+- name: Ensure servise nginx is restarted
   service:
     name: nginx
-    state: started    
+    state: restarted    
