@@ -1,0 +1,2 @@
+src_folder: ./templates/test_work
+dest_folder: /etc/systemd/system/test_work.service

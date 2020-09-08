@@ -5,8 +5,8 @@
   
 - name: Ensure service test_work is present
   copy:
-    src: ./templates/test_work
-    dest: /etc/systemd/system/test_work.service
+    src: "{{ src_folder }}"
+    dest: "{{ dest_folder }}"
 
 - name: Ensure test_work service is started
   service:

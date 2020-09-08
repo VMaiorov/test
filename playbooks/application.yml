@@ -11,3 +11,6 @@
     - default_packages
     - nginx
     - app   
+
+  vars_files:
+    - ../environments/environment_dir/host_vars/app_vars.yml  
